@@ -104,9 +104,9 @@ Among all the application he found a free one that offers a good services both f
 | NFR5 | Performance                                     | All functions must be completed in < 1 sec                              | All FRs |
 
 
-## Use case diagram and use cases
+# Use case diagram and use cases
 
-# Use case diagram
+## Use case diagram
 
 @startuml
 
@@ -143,9 +143,9 @@ rectangle Ezgas {
 @enduml
 
 
-# Use cases
+## Use cases
 
-# UC1[ FR 1,FR 1.1, FR 1.2]: Search for a gas station
+### UC1[ FR 1,FR 1.1, FR 1.2]: Search for a gas station
 
 
 | Actors involved  | Driver                                                                                                       |
@@ -156,7 +156,7 @@ rectangle Ezgas {
 | Variants         | The user filters the gas stations  in order to see only  the ones under a specific price or distance.        |
 
 
-# UC2: FR 2: Driver registration
+## UC2: FR 2: Driver registration
 
 | Actors involved  | Driver                                                                                     |
 |------------------|--------------------------------------------------------------------------------------------|
@@ -165,7 +165,7 @@ rectangle Ezgas {
 | Nominal Scenario | Driver inserts Username, email and password. The system creates a new profile.             |
 | Variants         | The Username has been already used or the password does not follow the security standards. |
 
-# UC3.: FR 3.1: Driver updates price
+## UC3.: FR 3.1: Driver updates price
 
 | Actors involved  | Driver                                                                                   |
 |------------------|------------------------------------------------------------------------------------------|
@@ -174,7 +174,7 @@ rectangle Ezgas {
 | Nominal Scenario | Driver notices that the prices related to a gas station are outdated so he updates them. |
 | Variants         |                                                                                          |
 
-# UC4.: FR 4: Gas station registration
+## UC4.: FR 4: Gas station registration
 
 | Actors involved  | Gas station owner.                                                                                    |
 |------------------|-------------------------------------------------------------------------------------------------------|
@@ -183,7 +183,7 @@ rectangle Ezgas {
 | Nominal Scenario | A gas station owner inserts Username, Password and a certification. The system creates a new account. |
 | Variants         | Who is trying to create the account is not certified.                                                 |
 
-# UC5.: FR 5.1: The gas station owner certifies an updated price
+## UC5.: FR 5.1: The gas station owner certifies an updated price
 
 | Actors involved  | Gas station owner                                             |
 |------------------|---------------------------------------------------------------|
@@ -192,7 +192,7 @@ rectangle Ezgas {
 | Nominal Scenario | Gas station owner checks and confirms prices.                 |
 | Variants         | Gas station owner checks and updates wrong prices.            |
 
-# UC5.: FR 5.2: The gas station owner updates prices
+## UC5.: FR 5.2: The gas station owner updates prices
 
 | Actors involved  | Gas station owner.                                       |
 |------------------|----------------------------------------------------------|
@@ -202,9 +202,9 @@ rectangle Ezgas {
 | Variants         |                                                          |
 
 
-## Relevant scenarios
+# Relevant scenarios
 
-# Scenatio 1: Driver updates price
+## Scenatio 1: Driver updates price
 
 | Scenario ID    | SC1                                                            |
 |----------------|----------------------------------------------------------------|
@@ -219,7 +219,7 @@ rectangle Ezgas {
 | 5.             | The price is updated but not certified.                        |
 
 
-# Scenatio 2: Gas station owner certifies update
+## Scenatio 2: Gas station owner certifies update
 
 | Scenario ID    | SC2                                        |
 |----------------|--------------------------------------------|
@@ -231,7 +231,7 @@ rectangle Ezgas {
 | 2.             | The gas station owner confirms the prices. |
 | 3.             | The prices are correctly updated           |
 
-# Scenatio 3: Gas station owner refuses a price update
+## Scenatio 3: Gas station owner refuses a price update
 
 | Scenario ID    | SC3                                                       |
 |----------------|-----------------------------------------------------------|
