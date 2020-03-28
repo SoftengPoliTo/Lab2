@@ -48,8 +48,6 @@ Version: 5
 
   actor Driver
   actor Gas_Station_Owner
-  /'actor MapSystem'/
-  /'actor Admin'/
   usecase EZGas
   Driver -right-> EZGas
   Gas_Station_Owner  -left-> EZGas
