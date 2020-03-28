@@ -43,6 +43,7 @@ Version: 5
 
 ## Context Diagram
 
+```plantuml
 @startuml
 
   actor Driver
@@ -55,7 +56,7 @@ Version: 5
   MapSystem -up-> EZGas
 
 @enduml
-
+```
 # Interfaces
 
   | Actor             | Logical Interface | PHYSICAL INTERFACE                               |
@@ -107,6 +108,43 @@ Among all the application he found a free one that offers a good services both f
 # Use case diagram and use cases
 
 ## Use case diagram
+
+
+```plantuml
+@startuml
+
+left to right direction
+skinparam packageStyle rectangle
+
+actor GasStationAdmin as g
+actor Driver as d
+actor MapSystem as m
+
+rectangle Ezgas {
+  ("Search gas Station") as uc1
+  ("Filter by distance and price") as uc2
+  ("EZGas registration") as uc3
+  ("Update price") as uc4
+  ("Certify price") as uc5
+  ("EZGas Log in") as uc7
+
+  m <-- uc1
+  uc1 <.. uc2 :<<extend>>
+  d -- uc1
+  d -- uc3
+  d -- uc4
+
+  g -- uc4
+  g -- uc5
+  g -- uc3
+
+  uc3 ..> uc7 :<<extend>>
+  uc4 ..> uc7 :<<include>>
+  uc5 ..> uc7 :<<include>>
+}
+
+@enduml
+```
 
 @startuml
 
@@ -213,7 +251,7 @@ rectangle Ezgas {
 | Post-condition | Price is updated                                               |
 | Steps          | Step description                                               |
 | 1.             | The driver selects the gas station.                            |
-| 2.             | The driver selects the âUpdate Priceâ button.                  |
+| 2.             | The driver selects the update price button.                    |
 | 3.             | The driver inserts the new price.                              |
 | 4.             | The driver submits the modification.                           |
 | 5.             | The price is updated but not certified.                        |
