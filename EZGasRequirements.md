@@ -144,39 +144,6 @@ rectangle Ezgas {
 @enduml
 ```
 
-@startuml
-
-left to right direction
-skinparam packageStyle rectangle
-
-actor GasStationAdmin as g
-actor Driver as d
-actor MapSystem as m
-
-rectangle Ezgas {
-  ("Search gas Station") as uc1
-  ("Filter by distance and price") as uc2
-  ("EZGas registration") as uc3
-  ("Update price") as uc4
-  ("Certify price") as uc5
-  ("EZGas Log in") as uc7
-
-  m <-- uc1
-  uc1 <.. uc2 :<<extend>>
-  d -- uc1
-  d -- uc3
-  d -- uc4
-
-  g -- uc4
-  g -- uc5
-  g -- uc3
-
-  uc3 ..> uc7 :<<extend>>
-  uc4 ..> uc7 :<<include>>
-  uc5 ..> uc7 :<<include>>
-}
-
-@enduml
 
 
 ## Use cases
