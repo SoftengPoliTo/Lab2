@@ -1,0 +1,267 @@
+# Lab2
+Requirement Document
+
+Author: Dario Piazza
+
+
+# Contents
+
+- [Stakeholders](#stakeholders)
+- [Context Diagram and interfaces](#context-diagram-and-interfaces)
+	+ [Context Diagram](#context-diagram)
+	+ [Interfaces](#interfaces) 
+	
+- [Stories and personas](#stories-and-personas)
+- [Functional and non functional requirements](#functional-and-non-functional-requirements)
+	+ [Functional Requirements](#functional-requirements)
+	+ [Non functional requirements](#non-functional-requirements)
+- [Use case diagram and use cases](#use-case-diagram-and-use-cases)
+	+ [Use case diagram](#use-case-diagram)
+	+ [Use cases](#use-cases)
+	+ [Relevant scenarios](#relevant-scenarios)
+- [Glossary](#glossary)
+
+
+# Stakeholders
+
+| Stakeholder name  | Description | 
+| :-----------------: |:-----------:|
+| User     |Uses the application to discover gas stations in an area and possibly updates their gas prices| >
+
+# Context Diagram and interfaces
+
+## Context Diagram
+
+```plantuml
+left to right direction
+actor User as u
+actor "Map system" as Ms
+rectangle application{
+	u -- (EZGas)
+	(EZGas) -- Ms
+}
+
+```
+
+## Interfaces
+| Actor | Logical Interface | Physical Interface  |
+| :-------------: |:-------------:| -----:|
+|User1|GUI |Screen, keyboard|
+
+
+# Stories and personas
+
+Luca works for a famous delivery company, and it is charge of driving the van to deliver the items in the city of Milan and its neighboring. Different times a week Luca finds himself to be short of fuel when travelling from a place to another one, and sometimes it is not so easy to find the nearest gas station, and, even if it's right before his eyes, not always it has competitive prices. Anyway usually Luca tries to look for a more convenient place, but after some minutes of searching he decides that he is wasting his time that could be used to deliver more items, so he often ends up paying for expensive fuel.
+
+Luca signals his inconvenient to the company and finds out that other colleagues eperience the same problem. 
+
+He realizes that the solution would be to create a channel or an application that allows users to find the closest gas station and compare their prices, so that he and his colleagues do not need to anticipate too much money and the company can start saving on a bigger scale. Moreover, as this is a common problem, Luca also thinks that maybe every driver can update the information related to a particular gas station, so that people in a similar situation could access updated data. 
+
+# Functional and non functional requirements
+
+## Functional Requirements
+
+| ID        | Description  |
+| ------------- |:-------------:| 
+|  FR1     | Search for gas stations (close to user/ by address) |  
+|  FR2     | View details of a gas station |
+|  FR3     | Edit info of a gas station |
+|  FR4     | Add a new gas station |
+|  FR5     | Signal a gas station as closed |
+|  FR6     | Establish user position |
+|  FR7     | Log-in|
+|  FR8     | Log-out |
+
+## Non Functional Requirements
+
+| ID        | Type (efficiency, reliability, .. see iso 9126)           | Description  | Refers to |
+| ------------- |:-------------:| :-----:| -----:|
+|  NFR1     | Usability | Application should be used with no training by any user  | All FR |
+|  NFR2     | Performance | All functions should complete in < 0.5 sec  | All FR |
+|  NFR3     | Portability | The application should run on different mobile OS (Android, iOS, etc...) | All FR |
+|  NFR4     | Portability | The application should be downloadable from the different app stores alongside with personal data in less than 5 minutes | All FR |
+
+
+# Use case diagram and use cases
+
+## Use case diagram
+
+```plantuml
+left to right direction
+actor User as u
+actor MapService as m 
+rectangle EZGas {
+u -->(FR1 Search for gas stations close to user/ by address)
+(FR1 Search for gas stations close to user/ by address)-->m
+u --> (FR2 View details of a gas station)
+u --> (FR3 Edit info of a gas station)
+u --> (FR4 Add a new gas station)
+u --> (FR5 Signal a gas station as closed)
+u --> (FR6 Establish user position)
+u --> (FR7 Log-in)
+u --> (FR8 Log-out)
+```
+
+## Use Cases
+
+### Use case 1, UC1 - FR1   Search for gas stations (close to user/ by address)
+
+| Actors Involved        | User |
+| ------------- |:-------------:| 
+|  Precondition     | Position permission enabled, User is connected to the internet, User is logged-in |  
+|  Post condition     |  |
+|  Nominal Scenario     | User selects a gas station in the nearby or searches for an address, access info inherent to fuel prices|
+|  Variants     | No internet connection, no GPS signal, no gas station available for the search, issue warning |
+
+### Use case 2, UC2 - FR2 View details of a gas station
+
+| Actors Involved        | User |
+| ------------- |:-------------:| 
+|  Precondition     | Gas Station GS exists, User is logged-in,User is connected to the internet|  
+|  Post condition     | |
+|  Nominal Scenario     | User access info about gas station|
+|  Variants     | The information is not reliable/unavailable, issue warning |
+
+### Use case 3, UC3 - FR3 Edit info of a gas station
+| Actors Involved        | User |
+| ------------- |:-------------:| 
+|  Precondition     | Gas Station exists, user is logged-in,User is connected to the internet |  
+|  Post condition     | Possibly confirm the information provided (rating system) |
+|  Nominal Scenario     | User selects a gas station, user edits info of gas station|
+|  Variants     |  |
+
+### Use case 4, UC4 - FR4 Add a new gas station
+
+| Actors Involved        | User |
+| ------------- |:-------------:| 
+|  Precondition     | User is logged-in,User is connected to the internet|  
+|  Post condition     | Possibly confirm the information provided (rating system) |
+|  Nominal Scenario     | User insert info about gas station,data stored n server |
+|  Variants     |  |
+
+### Use case 5, UC3 - FR3 Signal a gas station as closed
+| Actors Involved        | User |
+| ------------- |:-------------:| 
+|  Precondition     | Gas Station exists , user is logged-in, User is connected to the internet |  
+|  Post condition     | Possibly confirm the information provided (rating system), delete gas station from server|
+|  Nominal Scenario     | User selects gas station and signals it as closed|
+|  Variants     |  |
+
+
+### Use case 6, FR6 Establish user position
+
+| Actors Involved        | User |
+| ------------- |:-------------:| 
+|  Precondition     |  Position permission enabled |  
+|  Post condition     | Valid user position |
+|  Nominal Scenario     | User GPS coordinates are established |
+|  Variants     | No GPS signal, issue warning |
+
+### Use case 7, FR7 Log-in
+| Actors Involved        | User |
+| ------------- |:-------------:| 
+|  Precondition     | User has signed-in,User is connected to the internet  |  
+|  Post condition     | User is logged-in |
+|  Nominal Scenario     | User insert username and password, log-in is performed |
+|  Variants     | Wrong parameters, sever error, issue warning|
+
+### Use case 8, FR8 Log-out
+| Actors Involved        | User |
+| ------------- |:-------------:| 
+|  Precondition     | User is logged-in,User is connected to the internet |  
+|  Post condition     | User is logged-out |
+|  Nominal Scenario     | User confirms log-out, user logged-out |
+|  Variants     | Sever error, issue warning|
+
+# Relevant scenarios
+
+## Scenario 1
+
+| Scenario ID: SC1        | Corresponds to UC1,UC2,UC5  |
+| ------------- |:-------------| 
+| Description | User searches for a gas station (nearby/by address)  |
+| Precondition |  User is connected to the internet, valid GPS coordinates|
+| Postcondition |   |
+| Step#        |  Step description   |
+|  1     | User select the search by adress or in the nearby |    
+|  2     | User receives search results |
+|  3     | U selects a gas station  |
+| 4 | U views details about gas station|
+
+## Scenario 2
+
+| Scenario ID: SC1  | Corresponds to UC3  |
+| ------------- |:-------------| 
+| Description | User edits info about a gas station  |
+| Precondition |  U is connected to the internet, gas station exists|
+| Postcondition |  Possibly confirm the information provided (rating system) |
+| Step#        |  Step description   |
+|  1     | Users selects the a gas station |  
+|  2     | User clicks on "edit info" |
+|  3     | User enters information about gas station |
+| 4 | User confirms and saves the information entered|
+
+
+## Scenario 3
+
+| Scenario ID: SC1  | Corresponds to UC4 |
+| ------------- |:-------------| 
+| Description | User adds a new gas station |
+| Precondition |  User is connected to the internet, User is logged-in|
+| Postcondition | Possibly confirm the information provided (rating system)  |
+| Step#        |  Step description   |
+|  1     | User selects "add a gas station"  |  
+|  2     | User enters information about gas station|
+|  3     | User confirms and saves the changes |
+| 4 | Information are stored in server|
+
+## Scenario 4
+
+| Scenario ID: SC1  | Corresponds to UC5 |
+| ------------- |:-------------| 
+| Description | User signals a gas station as closed |
+| Precondition |  User is connected to the internet, User is logged-in|
+| Postcondition | Possibly confirm the information provided (rating system)  |
+| Step#        |  Step description   |
+|  1     | User selects "signal as closed"  |  
+|  2     | User confirms and saves the changes |
+| 3 | Information are stored in server|
+# Glossary
+
+```plantuml
+class EZGas
+class GasStation {
++ name
++ location
+}
+
+class GasType {
++ type
++ price/lt
+}
+
+class EZGasAccount {
++email
++password
++location
+}
+
+
+class User{
++ name
++ surname
+}
+
+
+
+EZGas -- "*" GasStation
+EZGas --  "*" User
+GasStation -- "*" GasType
+EZGasAccount --  User
+
+EZGasAccount  --  "*" GasStation : edit
+EZGasAccount  --  "*" GasStation : add
+EZGasAccount  --  "*" GasStation : signal as closed
+
+
+```
