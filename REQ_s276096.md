@@ -16,9 +16,9 @@ Date: 25/03/2020
 	+ [Functional Requirements](#functional-requirements)
 	+ [Non functional requirements](#non-functional-requirements)
 - [Use case diagram and use cases](#use-case-diagram-and-use-cases)
-		+ [Use case diagram](#use-case-diagram)
-		+ [Use cases](#use-cases)
-		+ [Relevant scenarios](#relevant-scenarios)
+	+ [Use case diagram](#use-case-diagram)
+	+ [Use cases](#use-cases)
+	+ [Relevant scenarios](#relevant-scenarios)
 
 # Abstract
 
