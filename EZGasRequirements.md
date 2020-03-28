@@ -149,7 +149,7 @@ rectangle Ezgas {
 
 
 | Actors involved  | Driver                                                                                                       |
-|                  |                                                                                                              |
+|------------------|--------------------------------------------------------------------------------------------------------------|
 | Pre-condition    | Internet and Gps connections and Map System work                                                             |
 | Post-conditions  | Get results                                                                                                  |
 | Nominal Scenario | The driver opens the applications and looks the map in  order to find the closer or the cheaper gas station. |
@@ -159,7 +159,7 @@ rectangle Ezgas {
 #UC2: FR 2: Driver registration
 
 | Actors involved  | Driver                                                                                     |
-|                  |                                                                                            |
+|------------------|--------------------------------------------------------------------------------------------|
 | Pre-condition    | Driver account does not exist.                                                             |
 | Post-conditions  | Driver account exists.                                                                     |
 | Nominal Scenario | Driver inserts Username, email and password. The system creates a new profile.             |
@@ -168,7 +168,7 @@ rectangle Ezgas {
 #UC3.: FR 3.1: Driver updates price
 
 | Actors involved  | Driver                                                                                   |
-|                  |                                                                                          |
+|------------------|------------------------------------------------------------------------------------------|
 | Pre-condition    | Prices are outdated                                                                      |
 | Post-conditions  | Prices are updated but marked as not certified                                           |
 | Nominal Scenario | Driver notices that the prices related to a gas station are outdated so he updates them. |
@@ -177,7 +177,7 @@ rectangle Ezgas {
 #UC4.: FR 4: Gas station registration
 
 | Actors involved  | Gas station owner.                                                                                    |
-|                  |                                                                                                       |
+|------------------|-------------------------------------------------------------------------------------------------------|
 | Pre-condition    | Gas station is not associated to any account.                                                         |
 | Post-conditions  | Gas station owner is created.                                                                         |
 | Nominal Scenario | A gas station owner inserts Username, Password and a certification. The system creates a new account. |
@@ -186,7 +186,7 @@ rectangle Ezgas {
 #UC5.: FR 5.1: The gas station owner certifies an updated price
 
 | Actors involved  | Gas station owner                                             |
-|                  |                                                               |
+|------------------|---------------------------------------------------------------|
 | Pre-condition    | Gas station prices are updated by a driver but not certified. |
 | Post-conditions  | Gas station prices are certified.                             |
 | Nominal Scenario | Gas station owner checks and confirms prices.                 |
@@ -195,7 +195,7 @@ rectangle Ezgas {
 #UC5.: FR 5.2: The gas station owner updates prices
 
 | Actors involved  | Gas station owner.                                       |
-|                  |                                                          |
+|------------------|----------------------------------------------------------|
 | Pre-condition    | Prices are outdate and gas station owner has an account. |
 | Post-conditions  | Prices are updated.                                      |
 | Nominal Scenario | Gas station owner checks and confirms prices.            |
@@ -207,7 +207,7 @@ rectangle Ezgas {
 #Scenatio 1: Driver updates price
 
 | Scenario ID    | SC1                                                            |
-|                |                                                                |
+|----------------|----------------------------------------------------------------|
 | Description    | The driver notices an outdated price and decides to update it. |
 | Pre-condition  | Price is outdated                                              |
 | Post-condition | Price is updated                                               |
@@ -222,7 +222,7 @@ rectangle Ezgas {
 #Scenatio 2: Gas station owner certifies update
 
 | Scenario ID    | SC2                                        |
-|                |                                            |
+|----------------|--------------------------------------------|
 | Description    | The gas station owner receives the update. |
 | Pre-condition  | Price is updated but not certified.        |
 | Post-condition | Price update is certified.                 |
@@ -234,7 +234,7 @@ rectangle Ezgas {
 #Scenatio 3: Gas station owner refuses a price update
 
 | Scenario ID    | SC3                                                       |
-|                |                                                           |
+|----------------|-----------------------------------------------------------|
 | Description    | The gas station owner receives a wrong update.            |
 | Pre-condition  | Price is updated but wrong.                               |
 | Post-condition | The price is updated by the owner with the correct value. |
