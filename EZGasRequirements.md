@@ -2,7 +2,7 @@
 
 Authors: Peraccini Simone
 
-Date: 29/05/2019
+Date: 28/03/2020
 
 Version: 5
 
@@ -70,7 +70,7 @@ Giovanni  is a lorry driver that travels all around Europe. During  his working 
 
 However, Giovanni experienced that even this strategy was not good enough to keep the prices  updated and he decided to contact his friend John, who is a computer engineer. Together they decided develop an application able to collect and show these data.
 
-Maurizio is a gas station owner. He noticed that his earnigs were not so satisfying so he decided to decrease the prices but even this strategy does not allow him to reach improvements.
+Thomas is a gas station owner. He noticed that his earnigs were not so satisfying so he decided to decrease the prices but even this strategy does not allow him to reach improvements.
 Because of this he thought that his gas station may been a little far from the main streets of the city so he started to browse the web in order to find useful services.
 Among all the application he found a free one that offers a good services both for drivers and gas stations owners: EZGas.
 
