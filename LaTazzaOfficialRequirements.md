@@ -57,6 +57,8 @@ One of the colleagues, the *hacker*, volunteers to develop a simple applic
 
 ## Context Diagram
 
+![](usecase.png)
+
 ```plantuml
 left to right direction
 actor Administrator as a
