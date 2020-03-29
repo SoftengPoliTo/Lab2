@@ -59,12 +59,6 @@ One of the colleagues, the *hacker*, volunteers to develop a simple applic
 
 ![](context_diagram.png)
 
-```plantuml
-left to right direction
-actor Administrator as a
-a -- (La Tazza)
-```
-
 ## Interfaces
 | Actor | Logical Interface | Physical Interface  |
 | ------------- |:-------------:| -----:|
