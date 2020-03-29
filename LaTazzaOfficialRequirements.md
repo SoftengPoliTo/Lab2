@@ -57,7 +57,7 @@ One of the colleagues, the *hacker*, volunteers to develop a simple applic
 
 ## Context Diagram
 
-![](usecases.png)
+
 
 ```plantuml
 left to right direction
@@ -110,16 +110,7 @@ Sometimes it even happens that while the worker are on their work the gas finish
 
 ## Use case diagram
 
-```plantuml
-left to right direction
-actor Administrator as a
-a -- (FR1  Record usage of capsules by colleague)
-a -- (FR2 Record usage of capsules by visitor)
-a -- (FR3 Record recharge of account of colleague)
-a -- (FR4 Record purchase of capsules)
-a -- (FR5 Produce report on consumption of colleague)
-a -- (FR6 Produce report on all consumptions)
-```
+![](usecases.png)
 ## Use Cases
 
 ### Use case 1, UC1 - FR1  Record usage of capsules by colleague
