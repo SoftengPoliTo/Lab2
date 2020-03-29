@@ -67,21 +67,17 @@ a -- (La Tazza)
 ## Interfaces
 | Actor | Logical Interface | Physical Interface  |
 | ------------- |:-------------:| -----:|
-|Administrator|GUI |Screen, keyboard|
+|User |Web Service |PC,Phone,Internet|
 
 
 # Stories and personas
-John works in the office and has an inclination for order and discipline. So he volunteers to keep track of what happens on the coffee machine. When a capsule of a certain type is close to sold out John reorders. Capsules can be purchased only in multiples of a minimum quantity (ex 40). On the money side, John computes how much each colleague should pay for what she has consumed. In practice every colleague has a virtual account, initially charged with a reasonable amount of cash given to John (ex 10 euros). John maintains this account and asks to recharge it when close to zero. Physically the money for capsules is in cash, and John manages it as if it where his personal money.
+The CEO develops a web application through which the users can check the prices of the fuels in different work station.
+Mr.Harry got a transport company. The Sundays of every weekend he was to put fuel to his 3 trucks so that they can start working from Monday again. 
 
-All colleagues trust each other, so negative accounts are allowed. John uses his personal money if needed to reorder capsules. 
+He opens the web application from his smartphones.He checks the prices of fuels of different gas station. He decides to use Q8 as finds out that the price of Q8 is less then others for example repsol. He informs his workers and share the location of the gas station in whatsapp and ask him to go there and fill the fuel to the trunk. 
 
-John is happy to do this work, but would like to hand over to someone else after a certain amount of time. In any case when he is on vacation another colleague takes over temporarily.
+Sometimes it even happens that while the worker are on their work the gas finishes the workers can quickly login in the platform of EZgas and compare the prices of the gases in different fuels and decide the one they prefer. The google Map will easily help to locate the nearest fuel station.
 
-John would like to have a simple way to report (ex every one or two weeks) to each colleague all expenses and consumption for LaTazza. Without this report nobody has a clear idea of how much was the consumption.
-
-Mary works in the office and likes to share time with her colleagues in front of the coffee machine. On the side of the coffee machine is a tray with capsules. When she wants a coffee (or else) she takes a capsule from the tray and tells to John. To do so she uses a whatsapp group (LaTazza friends).
-
-Mr. Guest is a visitor in the office. As such he does not have the privilege of having an account. In case he can directly pay the capsule, cash, to John.
 
 # Functional and non functional requirements
 
@@ -89,24 +85,23 @@ Mr. Guest is a visitor in the office. As such he does not have the privilege of 
 
 | ID        | Description  |
 | ------------- |:-------------:| 
-|  FR1     | Record that a colleague has used n capsules of a certain type, update his account |  
-|  FR2     | Record that a visitor has used n capsules of a certain type |
-|  FR3     | Record that a colleague has recharged x euros on her account |
-|  FR4     | Record that n capsules of a certain type have been received, and paid for |
-|  FR5     | Produce a report about consumption and recharges of a colleague over a certain period of time |
-|  FR6     | Produce a report about all consumption and recharges over a certain period of time |
-|  FR7     | Manage types of capsules and prices |
-|  FR8     | Manage colleagues and accounts |
+|  FR1     | Record the change of price of fuel each day |  
+|  FR2     | Record the number of user visiting the fuel station |
+|  FR3     | Record the new fuel stations built |
+|  FR4     | Manage the types of gas and fuel |
+|  FR5     | Produce a report about daily sale|
+|  FR6     | Produce a report about daily traffic |
+|  FR7     | Manage users and accounts|
+
 
 ## Non Functional Requirements
 
 | ID        | Type (efficiency, reliability, .. see iso 9126)           | Description  | Refers to |
 | ------------- |:-------------:| :-----:| -----:|
-|  NFR1     | Usability | Application should be used with no training by any colleague in the office  | All FR |
-|  NFR2     | Performance | All functions should complete in < 0.5 sec  | All FR |
-|  NFR3     | Portability | The application runs on MS Windows (7 and more recent)  | All FR |
-|  NFR4     | Portability | The application (functions and data) should be portable from a PC to another PC in less than 5 minutes | All FR |
-|  NFR5     | Localisation | Decimal numbers use . (dot) as decimal separator ||
+|  NFR1     | Usability | Application should be used with no training by any users in the office  | All FR |
+|  NFR2     | Performance | All functions should complete in < 1 sec  | All FR |
+|  NFR3     | Portability | The application runs on MS Windows (7 and more recent) and andriod smartphones  | All FR |
+|  NFR4     | Efficieny   | The application should always show the uptodate prices.|
 
 
 # Use case diagram and use cases
