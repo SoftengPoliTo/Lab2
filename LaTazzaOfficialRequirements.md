@@ -1,23 +1,10 @@
 # Official Requirements Document
 
-Authors: Maurizio Morisio, Luca Ardito, Riccardo Coppola
+Authors: Mostafa Tavasoli Norouzi
 
-Date: 29/05/2019
+Date: 29/05/2020
 
 Version: 5
-
-Change history
-
-| Version | Changes | 
-| ----------------- |:-----------|
-| 2 | Fixed defect in [scenario 2](#scenario-2): precondition was wrong  |
-| | Fixed defect in scenario [format](#relevant-scenarios): added post conditions |
-| | Fixed defect in [use case 2](#use-cases): variants text canceled |
-| 3 | Fixed defect in [use case 3]: recharge only positive|
-| |  Added Non functional requirement NFR5 |
-| 4 | Fixed defect in [use case 3]: post condition is on Colleague account, and LaTazza|
-| | Fixed defect in [use case 1]: post condition is on Colleague account, not LaTazza|
-| 5 | Fized defect in [use case 4]: precondition modified |
 
 # Contents
 - [Abstract](#abstract)
@@ -40,27 +27,23 @@ Change history
 
 # Abstract
 
-Some colleagues share a coffee machine in a common space for breaks. Capsules are left aside the machine. Whoever uses a capsule writes this down in a notebook left aside the coffee machine. One of the colleagues (called *administrator*) copies consumptions in an excel sheet and collects money from colleagues to (re)order capsules.
-
-One of the colleagues, the *hacker*, volunteers to develop a simple application to support the administrator. To keep things simple the application is standalone, and is meant to be used only by the administrator. Possibly the administrator role is taken by different colleagues over time. Instead of the notebook, the hacker sets up a WhatsApp group. Whenever a colleague uses a capsule, he sends a message to the group.
+One of the main issues of the major cities and the big one, is finding the best and less crowded Gas Station. which people always try to find this kind of place to do their task as soon as posible. So, an online system is required in this way to service people to find the Gas station soon and find the location of it in its cell phone and other E-devices by using the GPS system easily. Additionally, it is necessary to collect the fuel price in the different gas locations to make the right decision.
 
 
 # Stakeholders
 
 | Stakeholder name  | Description | 
 | ----------------- |:-----------:|
-| Administrator     |Uses the application to manage purchase and sharing of capsules in a small office (5-10 people)| 
-| Colleagues        |Do not use the application directly. They are interested in a correct accounting of capsule consumption and payments| 
+| Owner     		|Manages the system such as improve it, update it interms of hardware and sofrware | 
+| Customers       	|Use the system directly with their cell phones or other electronic devices| 
+| The GPS System    |Use by the customers to find the location of GAS stations| 
+| Shareholders      |The system need them, so it can develop and impelment| 
 
 # Context Diagram and interfaces
 
 ## Context Diagram
 
-```plantuml
-left to right direction
-actor Administrator as a
-a -- (La Tazza)
-```
+<img src="https://www.mediafire.com/convkey/d3cf/auarew5bdgsc7r46g.jpg" />
 
 ## Interfaces
 | Actor | Logical Interface | Physical Interface  |
