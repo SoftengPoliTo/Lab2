@@ -250,5 +250,5 @@ Transaction <|-- BoxPurchase
 ![](system_design.png)
 
 # Deployment Diagram
-![](Deployment model.png)
+![](Deploy_model.png)
 
