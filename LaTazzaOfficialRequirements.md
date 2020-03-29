@@ -67,8 +67,8 @@ a -- (La Tazza)
 | Actor | Logical Interface | Physical Interface  |
 | ------------- |:-------------:| -----:|
 |User |Web Service |PC,Phone,Internet|
-
-
+|Web Application|GUI |PC,Internet|
+|Location Tracker |Google Map |PC,Internet|
 # Stories and personas
 The CEO develops a web application through which the users can check the prices of the fuels in different work station.
 Mr.Harry got a transport company. The Sundays of every weekend he was to put fuel to his 3 trucks so that they can start working from Monday again. 
@@ -84,13 +84,14 @@ Sometimes it even happens that while the worker are on their work the gas finish
 
 | ID        | Description  |
 | ------------- |:-------------:| 
-|  FR1     | Record the change of price of fuel each day |  
-|  FR2     | Record the number of user visiting the fuel station |
+|  FR1     | Manage the types of gases and price |  
+|  FR2     | Record the number of users visiting the fuel station |
 |  FR3     | Record the new fuel stations built |
-|  FR4     | Manage the types of gases and price |
+|  FR4     | Develops the application |
 |  FR5     | Produce a report about daily sale|
 |  FR6     | Produce a report about daily traffic |
 |  FR7     | Manage users and accounts|
+
 
 
 ## Non Functional Requirements
