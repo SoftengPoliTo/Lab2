@@ -250,11 +250,5 @@ Transaction <|-- BoxPurchase
 ![](system_design.png)
 
 # Deployment Diagram
-As a stand-alone application only one node is needed.
-
-```plantuml
-artifact "La Tazza Application" as a
-node "Personal Computer" as n
-a -- n
-```
+![](Deploment_model.png)
 
