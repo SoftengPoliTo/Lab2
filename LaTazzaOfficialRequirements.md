@@ -87,7 +87,7 @@ Sometimes it even happens that while the worker are on their work the gas finish
 |  FR1     | Record the change of price of fuel each day |  
 |  FR2     | Record the number of user visiting the fuel station |
 |  FR3     | Record the new fuel stations built |
-|  FR4     | Manage the types of gas and fuel |
+|  FR4     | Manage the types of gases and price |
 |  FR5     | Produce a report about daily sale|
 |  FR6     | Produce a report about daily traffic |
 |  FR7     | Manage users and accounts|
