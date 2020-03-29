@@ -57,7 +57,7 @@ One of the colleagues, the *hacker*, volunteers to develop a simple applic
 
 ## Context Diagram
 
-![](usecase.png)
+![](usecases.png)
 
 ```plantuml
 left to right direction
