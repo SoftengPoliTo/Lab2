@@ -40,9 +40,10 @@ Change history
 
 # Abstract
 
-Some colleagues share a coffee machine in a common space for breaks. Capsules are left aside the machine. Whoever uses a capsule writes this down in a notebook left aside the coffee machine. One of the colleagues (called *administrator*) copies consumptions in an excel sheet and collects money from colleagues to (re)order capsules.
+As we know different types of gases offer different prices at different fuel station. This application basically simplifies the procedure as we can check the prices of the gas at the own comfort of the user.
 
-One of the colleagues, the *hacker*, volunteers to develop a simple application to support the administrator. To keep things simple the application is standalone, and is meant to be used only by the administrator. Possibly the administrator role is taken by different colleagues over time. Instead of the notebook, the hacker sets up a WhatsApp group. Whenever a colleague uses a capsule, he sends a message to the group.
+This app will intregate the prices of different of gases at different fuel station and show you on one platform. A user can check the price and decides what suits best. Additionally it also got service to locate the fuel station which is nearest.
+
 
 
 # Stakeholders
@@ -81,12 +82,12 @@ Sometimes it even happens that while the worker are on their work the gas finish
 | ID        | Description  |
 | ------------- |:-------------:| 
 |  FR1     | Manage the types of gases and price |  
-|  FR2     | Record the number of users visiting the fuel station |
+|  FR2     | Record the number of users using the application |
 |  FR3     | Record the new fuel stations built |
 |  FR4     | Develops the application |
-|  FR5     | Produce a report about daily sale|
-|  FR6     | Produce a report about daily traffic |
+|  FR5     | Produce a report about daily traffic of users |
 |  FR7     | Manage users and accounts|
+
 
 
 
@@ -107,62 +108,56 @@ Sometimes it even happens that while the worker are on their work the gas finish
 ![](usecases.png)
 ## Use Cases
 
-### Use case 1, UC1 - FR1  Record usage of capsules by colleague
-
+### Use case 1, UC1 - FR1  Manage the type of gases and prices
 | Actors Involved        | Administrator |
 | ------------- |:-------------:| 
-|  Precondition     | Capsule T exists, colleague C exists |  
-|  Post condition     | T.quantity_post < T.quantity_pre |
-| | C.PersonalAccount.balance_post < C.PersonalAccount.balance_pre |
-|  Nominal Scenario     | Administrator selects capsule type T, selects colleague C, Deduce quantity for capsule T, deduce price of T by account of colleague C|
-|  Variants     | Account of colleague C has not enough money, issue warning |
+|  Precondition     | Gases G exists, Prices P exists differently in each fuel station |  
+|  Post condition     | Gases and prices of each fuel station in one platfoem |
+|  Nominal Scenario     | Administrator checks each day|
+|  Variants     | Some days it may show no change. |
 
-### Use case 2, UC2 - FR2 Record usage of capsules by visitor
-
+### Use case 2, UC2 - FR2 Record the number of users using the application
 | Actors Involved        | Administrator |
 | ------------- |:-------------:| 
-|  Precondition     | Capsule T exists, visitor has no account |  
-|  Post condition     | T.quantity_post < T.quantity_pre |
-| | LaTazzaAccount.amount_post > LaTazzaAccount.amount_pre |
-|  Nominal Scenario     | Administrator selects capsule type T, Deduce quantity for capsule T, add price of T on LaTazzaAccount.amount|
+|  Precondition     | Gases G exists, Prices P exists, user has no account |  
+|  Post condition     | User got an account |
+|  Nominal Scenario     | Administrator checks daily the amount of traffic on the account to add more features.|
 |  Variants     |  |
 
-### Use case 3, UC3 - FR3 Record recharge of account of colleague
+### Use case 3, UC3 - FR3 Record the new fuel stations built
 
 | Actors Involved        | Administrator |
 | ------------- |:-------------:| 
-|  Precondition     | Personal Account PA exists , quantity >0 |  
-|  Post condition     | PA.balance_post = PA.balance_pre + quantity |
-|  | LaTazzaAccount.balance_post = LaTazzaAccount.balance_pre + quantity  |
-|  Nominal Scenario     | Administrator selects account PA of colleague C, increase account of  quantity, increase LaTazza account of quantity|
+|  Precondition     | Fuels station are added users unaware |  
+|  Post condition     | Users getting aware of new fuel station |
+|  Nominal Scenario     | Administrator informs the developer on addition of new fuel station.|
 |  Variants     |  |
 
-### Use case 4, UC4 - FR4 Record purchase of capsules
+### Use case 4, UC4 - FR4 Develops the application
 
-| Actors Involved        | Administrator |
+| Actors Involved        | Developer|
 | ------------- |:-------------:| 
-|  Precondition     | Capsule type CT exists,  LaTazzaAccount.balance has enough money for the purchase|  
-|  Post condition     | CT.quantity_post > CT.quantity _pre |
-| | LaTazzaAccount.balance_post < LaTazzaAccount.balance_pre|
-|  Nominal Scenario     | At time of order Administrator records money spent for order. At time of reception administrator selects capsule type CT, increases its quantity by a given number|
+|  Precondition     | No application before|  
+|  Post condition     | A web application  |
+|  Nominal Scenario     | The developer maintains the application and develop new features. |
 |  Variants     |  |
 
-### Use case 5, FR5 Produce report on consumption of colleague
+### Use case 5, FR5 Produce a report about daily traffic of users
 
-| Actors Involved        | Administrator  |
+| Actors Involved        | Developer  |
 | ------------- |:-------------:| 
-|  Precondition     | Colleague C exists |  
-|  Post condition     |  |
-|  Nominal Scenario     | Administrator selects colleague C, defines a time range,  application collects all transactions for C (recharges and capsules taken) in the time range and presents them|
+|  Precondition     | No report of number of users  |  
+|  Post condition     |  Daily report of the previous registered active and new register users |
+|  Nominal Scenario     | Developer keeps tracks for the activity of the application.|
 |  Variants     | |
 
-### Use case 6, FR6 Produce report on all consumptions
+### Use case 6, FR6  Manage users and accounts
 
-| Actors Involved        | Administrator |
+| Actors Involved        | Developer |
 | ------------- |:-------------:| 
-|  Precondition     |  |  
-|  Post condition     |  |
-|  Nominal Scenario     | Administrator defines a time range,  application collects all transactions (recharges, purchases, and capsules taken) in the time range and presents them |
+|  Precondition     | No accounts previously |  
+|  Post condition     | Accounts of users and the data is store in the database |
+|  Nominal Scenario     | The user accounts details are stored each day and there preferences are saved so they dont have to put their details each day.  |
 |  Variants     | |
 
 
@@ -170,30 +165,30 @@ Sometimes it even happens that while the worker are on their work the gas finish
 
 ## Scenario 1
 
-| Scenario ID: SC1        | Corresponds to UC1  |
+| Scenario ID: SC1        | Corresponds to UC4  |
 | ------------- |:-------------| 
-| Description | Colleague uses one capsule of type T|
-| Precondition |  account of C has enough money to buy capsule T|
-| Postcondition |  account of C updated, count of T updated |
+| Description | Development of the web application|
+| Precondition |  Users dont know about the various gas prices in different outstation|
+| Postcondition | Users know  |
 | Step#        |  Step description   |
-|  1     | Administrator selects capsule type T |  
-|  2     |  Administrator selects colleague C |
-|  3     | Deduce one for quantity of capsule T |
-| 4 | Deduce price of T from account of C|
+|  1     | User select the type of gas G|  
+|  2     | User choose the preffered location L |
+|  3     | User visit that location to fill the gas |
+
 
 ## Scenario 2
 
-| Scenario ID: SC2        | Corresponds to UC1  |
+| Scenario ID: SC2        | Corresponds to UC6  |
 | ------------- |:-------------| 
-| Description | Colleague uses one capsule of type T, account negative|
-|Precondition |  account of C has not enough money to buy capsule T|
-|Postcondition |  account of C updated, count of T updated |
+| Description | Manage users and accounts|
+|Precondition |  User needs to provide its details each time of location etc|
+|Postcondition | The details are stored in the database.  |
 | Step#        | Step description  |
-|  1     | Administrator selects capsule type T |  
-|  2     | Administrator selects colleague C |
-|  3     | Deduce one for quantity of capsule T  |
-|  4     | Deduce price of T from account of C  |
-|  5     | Account of C is negative, issue warning  |
+|  1     | Preffered Gas type G of the user is shownen.|  
+|  2     | Preffered Location L of the user is shownen. |
+|  3     | The user can change any of them if needed. |
+|  4     | The most nearest station from the user will be shown.  |
+
 
 
 # Glossary
