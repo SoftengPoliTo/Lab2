@@ -247,11 +247,7 @@ Transaction <|-- BoxPurchase
 ```
 
 # System Design
-Not really meaningful in this case. Only one personal computer is needed.
-
-```plantuml
-class "Personal Computer"
-```
+![](system_design.png)
 
 # Deployment Diagram
 As a stand-alone application only one node is needed.
