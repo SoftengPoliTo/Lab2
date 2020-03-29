@@ -49,8 +49,10 @@ One of the colleagues, the *hacker*, volunteers to develop a simple applic
 
 | Stakeholder name  | Description | 
 | ----------------- |:-----------:|
-| Administrator     |Uses the application to manage purchase and sharing of capsules in a small office (5-10 people)| 
-| Colleagues        |Do not use the application directly. They are interested in a correct accounting of capsule consumption and payments| 
+| Administrator     |Uses the application to manage the business.| 
+| Users             |They uses the appplication directly. They are interested in  collecting the prices of fuels in different workstation. |
+| Developer         |Develops the web application| 
+| Buyer             |Buys the web application. CEO| 
 
 # Context Diagram and interfaces
 
