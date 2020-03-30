@@ -1,0 +1,21 @@
+@startuml
+left to right direction
+actor Gas_Station_Manager as gsm
+actor Developer as dev
+actor Map_System as ms
+actor Driver_registered as drvR
+actor Driver_unregistered as drvUR
+rectangle "System"{
+	database "Gas_Station_DB" {
+	}
+	database "Users_DB" {
+	}
+	(EZGas Application) -left- Gas_Station_DB
+	(EZGas Application) -right- Users_DB
+}
+System -down- drvR
+System -down- drvUR
+System -down- gsm
+System -up- ms
+System -up- dev
+@enduml
