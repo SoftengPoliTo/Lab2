@@ -1,0 +1,241 @@
+﻿# Official Requirements Document
+
+Authors: Corentin Dieudonné
+
+Date: 24/03/2020
+
+Version: 1
+
+
+# Contents
+- [Abstract](#abstract)
+- [Stakeholders](#stakeholders)
+- [Context Diagram and interfaces](#context-diagram-and-interfaces)
+	+ [Context Diagram](#context-diagram)
+	+ [Interfaces](#interfaces) 
+	
+- [Stories and personas](#stories-and-personas)
+- [Functional and non functional requirements](#functional-and-non-functional-requirements)
+	+ [Functional Requirements](#functional-requirements)
+	+ [Non functional requirements](#non-functional-requirements)
+- [Use case diagram and use cases](#use-case-diagram-and-use-cases)
+	+ [Use case diagram](#use-case-diagram)
+	+ [Use cases](#use-cases)
+	+ [Relevant scenarios](#relevant-scenarios)
+- [Glossary](#glossary)
+- [System design](#system-design)
+- [Deployment diagram](#deployment-diagram)
+
+# Abstract
+
+EZGas is a crowdsourcing service that allows users to: collect prices of fuels in different gas stations locate gas stations in an area, along with the prices they practice.
+
+
+# Stakeholders
+
+| Stakeholder name  | Description |
+|: --------------------- :|:-----------:|
+| User  | Basic User : Uses the application to find the localisation and the price of the gas station|
+| Developer | Develop the skeleton of the application and update the price of the gas station |
+
+# Context Diagram and interfaces
+
+## Context Diagram
+
+[![UML diagram](adress "UML diagram")](https://github.com/CorentinDieudonne/Lab2/blob/master/Diagramme%20UML.JPG "UML diagram")
+
+## Interfaces
+| Actor | Logical Interface | Physical Interface  |
+| :-------------: |:-------------:| :-----:|
+|Developer| IDE |Screen, keyboard|
+| User| GUI | Smartphone |
+|Map System| internet connection | API |
+
+
+# Stories and personas
+Mark wants to know to refill his car, he has a 60L tank. He has some knowledges in computer science and he decides to develop a crowdsourced application to list the gas station, with their localisation and their price. With his friends, they consider that everybody can change the price of the gas station in order to have a daily follow. He decides to use a free API to have the localisation of all the gas station because he wants to simplify the life of the owner of the car. He wants to save more money as possible after the buying of his new car but he doesn't want to go more than 5km away from his home.
+
+John is a leader of an association of  motorist and he doesn't appreciate the station next to his home, he finds that the price of the fuel is too expensive and he wants to contribute with his association to centralize the data and to have the price of all the gas station in his neighbour. His basic knowledge in computer science offers him the possibility to contribute to the application but he also fear the gas station. He doesn't want that they can access to the application to modify the price of the opponent or to modify their price to get more clients.
+
+Marie is a newcomer in his new town for his job. She also travels a lot with her car and doesn't know where to refill his car in the highway. She also doesn't know where she can find gas station in the town she visits. She has a low technological level and she doesn't use its GPS to locate the gas station because she has no update for the price and the localisation. She wants a simple interface in an application to answer to their question.
+
+Mark wants to use a crowdsource application because he can't go have the information through the country but he also wants to have many updates of the code to assure the best quality for his service. He fears that its application won't work due to a lack of customer.
+
+
+# Functional and non functional requirements
+
+## Functional Requirements
+
+| ID        | Description  |
+| :------------- :|:-------------:| 
+|  FR1     | Record the localisation of the gas station |
+|  FR2     | Record the price of the gas station |
+|  FR3     | Record the localisation of the user |
+|  FR4     | Get the distance between the user and the gas station |
+|  FR5     | Search the gas station next to a place |
+
+
+## Non Functional Requirements
+
+| ID        | Type (Reliability, Usability, Efficiency, Maintainability, Portability)| Description  | Refers to |
+| :-------------: |:-------------:| :-----:| :-----:|
+|  NFR1     | Usability | Application should be very simple to use | All FR |
+|  NFR2     | Maintainablity | Maps should be updated regularly  | All FR |
+|  NFR3     | Portability | Application must run for every smartphone device  | All FR |
+|  NFR4     |Usability | The application needs to access to the localisation of the smartphone owner | All FR |
+|  NFR5     | Reliability | The price needs to be checked before publication |FR2|
+|  NFR6	    |Usability| The update of the map doesn't have to take more than 1min |FR1,FR2|
+|  NFR7	    |Efficiency| The change of the gas station's price should last than 1min | FR2,FR4|
+
+
+
+# Use case diagram and use cases
+
+## Use case diagram
+
+[![Uses case](Github "Uses case")](https://github.com/CorentinDieudonne/Lab2/blob/master/Use%20Cases.JPG "Uses case")
+## Use Cases
+
+### Use case 1, UC1-FR1 Record the localisation of the gas station
+
+| Actors Involved        | Developer, Map System |
+| ------------- |:-------------:| 
+|  Precondition     | API with gas station |  
+|  Post condition     | GasStation.Locate.value == true |
+| Condition | GasStation.Locate |
+|  Nominal Scenario     | Developer uses the API to get the list of the gas station, return the list of all gas station in a map |
+|  Variants |||
+
+### Use case 2, UC2 - FR2 Record the price of the gas station
+
+| Actors Involved        | User |
+| ------------- |:-------------:| 
+|  Precondition     | Gas Station GS exists |  
+|  Post condition     | GS.price = User.price.today |
+| | GS.price=new price() |
+|  Nominal Scenario     | User enter the values of the price|
+|  Variants     | The price already exists, the user updates it  |
+
+### Use case 3, UC3 - FR3 Record the localisation of the user
+
+| Actors Involved        | Developer, Map System |
+| ------------- |:-------------:| 
+|  Precondition     | User.localisation exists |  
+|  Post condition     | User.localisation != NULL |
+|  | User.localisation = Smartphone.localisation
+|  Nominal Scenario     | The developer take the permission from the smartphone to get the position of the user, if offers him the possibility to know the nearest gas station|
+|  Variants     |  |
+
+### Use case 4, UC4 - FR4 Get the distance between the user and the gas station
+
+| Actors Involved        | Map System, Developer |
+| ------------- |:-------------:| 
+|  Precondition     | User localisation exists, localisation of the gas station exists|  
+|  Post condition     | GasStationToUser.distance=value
+| | User-GasStation|
+|  Nominal Scenario     | At the place of the user, he receives the distance from the nearest gas station using a grid search algorithm|
+|  Variants     |  |
+
+### Use case 5, FR5 Search the gas station next to a place
+
+| Actors Involved        | User  |
+| ------------- |:-------------:| 
+|  Precondition     | User enter position |  
+|  Post condition     |  GasStationToPosition=value && GasStationPrice=value|
+|  Nominal Scenario     |User enters the position of a place, the application gives him a list of the nearest position and the price of the different gas station|
+|  Variants     | |
+
+
+# Relevant scenarios
+
+## Scenario 1
+
+| Scenario ID: SC1        | Corresponds to UC1  |
+| ------------- |:-------------| 
+| Description | Developer add/update the list of gas station|
+| Precondition |  connection between the application and the API|
+| Postcondition |  API updated|
+| Step#        |  Step description   |
+|  1     | Select the list of the gas station in the API |  
+|  2     |  Displays the list of gas station inside the application |
+|  3     | Create an element price for each gas station |
+
+
+## Scenario 2
+
+| Scenario ID: SC2        | Corresponds to UC2  |
+| ------------- |:-------------| 
+| Description | Developer gives the price of the gas station |
+|Precondition | Updated map, know the price of the gas station|
+|Postcondition |  price updated |
+| Step#        | Step description  |
+|  1     | Developer select the gas station |  
+|  2     | Developer add/update the price of the gaz station |
+|  3     | The price is checked  |
+|  4     | Price is updated  |
+
+## Scenario 3
+
+| Scenario ID: SC3        | Corresponds to UC2  |
+| ------------- |:-------------| 
+| Description | Developer select a gas station, add a wrong price|
+|Precondition |  account of C has not enough money to buy capsule T|
+|Postcondition |  price isn't updated |
+| Step#        | Step description  |
+|  1     | Developer select the gas station |  
+|  2     | Developer add/update the price of the gaz station |
+|  3     | The price is checked  |
+|  4     | Price is consider wrong |
+|  5     | Prince isn't updated  |
+
+## Scenario 4
+
+| Scenario ID: SC4        | Corresponds to UC3  |
+| ------------- |:-------------| 
+| Description | Developer, Map System|
+|Precondition |  developer add the authorization to use the position of the user|
+|Postcondition |  position is updated, the nearest gas station appears |
+| Step#        | Step description  |
+|  1     | Developer select the list of authorization |
+|  2     | User has to accept the list of authorization |
+|  3     | Map is updated with the corresponding place of the user  |
+
+
+## Scenario 5
+
+| Scenario ID: SC5        | Corresponds to UC4  |
+| ------------- |:-------------| 
+| Description | User selects a position and give the length to the shortest gas stations|
+|Precondition |  User activates the localization|
+|Postcondition |  User gets the length in km to a list of the nearest gas station |
+| Step#        | Step description  |
+|  1     | Developer calls a method to get the length between two elements of the maps|
+|  2     | API is called |
+|  3     | Using grid search algorithm |
+|  4     | Get the length to the gas station  |
+
+## Scenario 6
+
+| Scenario ID: SC6        | Corresponds to UC5  |
+| ------------- |:-------------| 
+| Description | User choose a location to know the price of the nearest gas station|
+|Precondition |  select a place P|
+|Postcondition |  get the list of the gas station and their price |
+| Step#        | Step description  |
+|  1     | Type the localization |
+|  2     | Enter the request|
+|  3     | Match the API with the localization  |
+|  4     | Return the list for the user  |
+
+## Scenario 7
+
+| Scenario ID: SC7        | Corresponds to UC5  |
+| ------------- |:-------------| 
+| Description | User choose a location to know the price of the nearest gas station|
+|Precondition |  select a place P |
+|Postcondition |  get null |
+| Step#        | Step description  |
+|  1     | Type the localization | 
+|  2     | Enter the request|
+|  3     | API doesn't match with the localization |
+|  4     | Return a null answer  |
