@@ -1,0 +1,46 @@
+@startuml
+left to right direction
+rectangle "Home_Screen"{
+	(Search)
+	(Map)
+	(Favorites)
+	(Account)
+}
+rectangle "Search_Screen"{
+
+}
+rectangle "Map_Screen"{
+
+}
+rectangle "Favorite_Screen"{
+
+}
+rectangle "Account_Screen"{
+	(Log In)
+	(Registration)
+	(User Details)
+	(Retrieve Password)
+
+	(Log In) --> (Registration) : "On click on Create Account"
+	(Log In) --> (Retrieve Password) : "On click on Forgot Password"
+	(User Details) --> (Retrieve Password) : "On click on Forgot Password"
+	(Registration) --> (Log In) : "end of Registration"
+	(Log In) --> (User Details) : "on successful log in"
+}
+rectangle "Gas_Station_Details_Screen"{
+
+}
+
+note "Search parameters are sent" as N1
+
+(Search) --> Search_Screen
+(Map) --> Map_Screen
+(Favorites) --> Favorite_Screen
+(Account) --> (Log In) : "if no user is logged in the application"
+(Account) --> (User Details) : "if the user is logged in the application"
+Map_Screen --> Gas_Station_Details_Screen : "On click on More Details of a Gas Station"
+Favorite_Screen --> Gas_Station_Details_Screen : "On click on a Gas Station of the list"
+Search_Screen --> Map_Screen : "on click on the Search button"
+Search_Screen ..> N1
+N1 ..> Map_Screen
+@enduml
